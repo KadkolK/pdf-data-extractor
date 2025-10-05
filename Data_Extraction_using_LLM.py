@@ -2,7 +2,7 @@
 import os  # File path and directory utilities
 import fitz  # PyMuPDF: to extract text or images from PDF
 import pytesseract  # OCR engine
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Path to Tesseract OCR
+pytesseract.pytesseract.tesseract_cmd = r'  '  # Path to Tesseract OCR
 
 from PIL import Image  # Image processing (used with OCR)
 import io  # Convert image data between formats
@@ -80,7 +80,7 @@ def extract_and_store(pdf_path, query_prompts):
     vector_store = create_faiss_index(text)
     retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
-    hf_pipe = pipeline("text-generation", model="Qwen/Qwen1.5-1.8B-Chat", device_map="auto", do_sample=False, max_new_tokens=64)
+    hf_pipe = pipeline("text-generation", model="#put your model here#", device_map="auto", do_sample=False, max_new_tokens=64)
     llm = HuggingFacePipeline(pipeline=hf_pipe)
     qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever, return_source_documents=True)
 
@@ -130,6 +130,7 @@ if __name__ == "__main__":
 
     extract_and_store(pdf_file, query_prompts)
     print("[-------] Extraction complete [-------]")
+
 
 
 
