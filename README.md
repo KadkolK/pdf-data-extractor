@@ -6,7 +6,7 @@ Python tool to extract structured information (tables, addresses, totals, etc.) 
 A Python tool to extract structured information from PDFs using OCR, semantic search, and LLMs.  
 It works on both scanned and digital PDFs.  
 
-**Note:** The hardcoded query prompts have been removed from the code. Users can define their own prompts externally to make the tool general-purpose.
+**Note:** The code includes example extraction logic for Purchase Orders (regex-based). The hardcoded query prompts have been removed, but some functions may still assume PO-like structures. Users can adapt or extend the extraction functions to handle other document types.
 
 ---
 
