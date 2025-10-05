@@ -1,0 +1,10 @@
+pymupdf
+pdfplumber
+pytesseract
+Pillow
+transformers
+torch
+langchain
+langchain-huggingface
+langchain-community
+faiss-cpu
